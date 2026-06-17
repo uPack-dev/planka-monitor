@@ -1,0 +1,118 @@
+.fade {
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translate3d(0, 4px, 0) scale(0.997);
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition:
+      opacity $time-fast $ease-out,
+      filter $time-fast $ease-out,
+      transform $time-fast $ease-out;
+  }
+
+  &-leave-to {
+    transform: translate3d(0, -1px, 0) scale(0.999);
+  }
+}
+
+.crossfade {
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translate3d(0, 4px, 0) scale(0.998);
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition:
+      opacity $time-fast $ease,
+      filter $time-fast $ease,
+      transform $time-fast $ease;
+  }
+
+  &-leave-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.mini-tab {
+  &-enter-active,
+  &-leave-active {
+    transition:
+      opacity 160ms $ease-out,
+      filter 160ms $ease-out,
+      transform 160ms $ease-out;
+  }
+
+  &-enter-from {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translate3d(0, 6px, 0) scale(0.998);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translate3d(0, -4px, 0) scale(0.999);
+  }
+}
+
+@keyframes mini-rise-in {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translate3d(0, 8px, 0) scale(0.997);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes mini-soft-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  62% {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-enter-active,
+  .fade-leave-active,
+  .crossfade-enter-active,
+  .crossfade-leave-active,
+  .mini-tab-enter-active,
+  .mini-tab-leave-active {
+    transition-duration: 1ms;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to,
+  .crossfade-enter-from,
+  .crossfade-leave-to,
+  .mini-tab-enter-from,
+  .mini-tab-leave-to {
+    filter: none;
+    transform: none;
+  }
+}

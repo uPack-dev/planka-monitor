@@ -1,0 +1,138 @@
+@use 'sass:math';
+
+@function size-by-vw($width, $context: $font-size-default) {
+  @return math.div(100vw, $width) * $context;
+}
+
+// Interaction states
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin text-clip($lines: 3) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin active {
+  @media (hover: hover) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  @media (hover: hover) {
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      @content;
+    }
+  }
+}
+
+@mixin active-focus() {
+  @media (hover: hover) {
+    &:active,
+    &:focus,
+    &:focus-visible {
+      @content;
+    }
+  }
+}
+
+@mixin hover-active-focus() {
+  &:active,
+  &:focus-visible {
+    @content;
+  }
+
+  @include hover {
+    @content;
+  }
+}
+
+// Sizing
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+
+// Scroll
+@mixin hide-scroll {
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Breakpoints
+@mixin media-breakpoint-desktop {
+  @include media-breakpoint-up(sm) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-desktop-only {
+  @include media-breakpoint-up(md) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-tablet {
+  @include media-breakpoint-down(md) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-mobile {
+  @include media-breakpoint-down(sm) {
+    @content;
+  }
+}
+
+@mixin rtl {
+  [lang='ar'] & {
+    @content;
+  }
+}
+
+@mixin animate-height {
+  transition: height 1s ease;
+}
+
+// Card image hover zoom utility
+// Usage: within a card block, call @include card-image-hover-zoom('&__image');
+// It applies transition to the image and scales it on :hover and :focus-within of the parent.
+@mixin card-image-hover-zoom($imageSelector: '&__image', $scale: $card-hover-scale, $duration: $card-hover-duration, $easing: $card-hover-easing) {
+  // Parent hover/focus states affect the image
+  &:hover #{$imageSelector},
+  &:focus-within #{$imageSelector} {
+    transform: scale($scale);
+    will-change: scale;
+  }
+
+  // Image transition
+  #{$imageSelector} {
+    transition: transform $duration $easing;
+  }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($background-color-tertiary, 0.2);
+    border-radius: 4px;
+  }
+}

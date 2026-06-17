@@ -1,0 +1,35 @@
+.layout-enter-active,
+.layout-leave-active,
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 180ms $ease-out,
+    filter 180ms $ease-out,
+    transform 180ms $ease-out;
+}
+
+.layout-enter-from,
+.layout-leave-to,
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(3px);
+  transform: translate3d(0, 6px, 0) scale(0.998);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layout-enter-active,
+  .layout-leave-active,
+  .page-enter-active,
+  .page-leave-active {
+    transition-duration: 1ms;
+  }
+
+  .layout-enter-from,
+  .layout-leave-to,
+  .page-enter-from,
+  .page-leave-to {
+    filter: none;
+    transform: none;
+  }
+}

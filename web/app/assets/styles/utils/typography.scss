@@ -1,0 +1,163 @@
+/* stylelint-disable */
+$thickness-family: (
+  'o': 'Orelega One',
+  's': 'Alegreya Sans',
+);
+
+$thickness: (
+  't': 100,
+  'xl': 200,
+  'l': 300,
+  'r': 400,
+  'm': 500,
+  's': 600,
+  'b': 700,
+);
+
+$typography: (
+  h1: (
+    font-size: 62,
+  ),
+  h2: (
+    font-size: 58,
+  ),
+  h3: (
+    font-size: 30,
+  ),
+  s1: (
+    font-size: 28,
+  ),
+  s2: (
+    font-size: 20,
+  ),
+  s3: (
+    font-size: 20,
+  ),
+  i1: (
+    font-size: 25,
+  ),
+  i2: (
+    font-size: 20,
+  ),
+);
+
+$typography-mobile: (
+  h1: (
+    font-size: 35,
+  ),
+  h2: (
+    font-size: 35,
+  ),
+  h3: (
+    font-size: 20,
+  ),
+  s1: (
+    font-size: 18,
+  ),
+  s2: (
+    font-size: 18,
+  ),
+  s3: (
+    font-size: 16,
+  ),
+  i1: (
+    font-size: 18,
+  ),
+  i2: (
+    font-size: 14,
+  ),
+);
+
+@mixin typography($name, $fWeight: 'r', $fFamily: 's') {
+  $styles: map-get($typography, $name);
+
+  font-size: #{map-get($styles, font-size)}px;
+  font-family: map-get($thickness-family, $fFamily), sans-serif;
+
+  @if map-has-key($styles, letter-spacing) {
+    $letterSpacing: map-get($styles, letter-spacing);
+    letter-spacing: #{$letterSpacing}px;
+  }
+
+  text-transform: map-get($styles, text-transform);
+  font-weight: map-get($thickness, $fWeight);
+}
+
+@mixin typography-mobile($name, $fWeight: 'r', $fFamily: 's') {
+  $styles: map-get($typography-mobile, $name);
+
+  font-size: #{map-get($styles, font-size)}px;
+  font-family: map-get($thickness-family, $fFamily), sans-serif;
+
+  @if map-has-key($styles, letter-spacing) {
+    $letterSpacing: map-get($styles, letter-spacing);
+    letter-spacing: #{$letterSpacing}px;
+  }
+
+  text-transform: map-get($styles, text-transform);
+  font-weight: map-get($thickness, $fWeight);
+}
+
+@mixin h1($weight: 'r', $family: 'o') {
+  @include typography('h1', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('h1', $weight, $family);
+  }
+}
+
+@mixin h2($weight: 'r', $family: 'o') {
+  @include typography('h2', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('h2', $weight, $family);
+  }
+}
+
+@mixin h3($weight: 'r', $family: 'o') {
+  @include typography('h3', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('h3', $weight, $family);
+  }
+}
+
+@mixin s1($weight: 'r', $family: 's') {
+  @include typography('s1', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('s1', $weight, $family);
+  }
+}
+
+@mixin s2($weight: 'r', $family: 's') {
+  @include typography('s2', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('s2', $weight, $family);
+  }
+}
+
+@mixin s3($weight: 'r', $family: 's') {
+  @include typography('s3', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('s3', $weight, $family);
+  }
+}
+
+@mixin i1($weight: 'r', $family: 's') {
+  @include typography('i1', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('i1', $weight, $family);
+  }
+}
+
+@mixin i2($weight: 'r', $family: 's') {
+  @include typography('i2', $weight, $family);
+
+  @include media-breakpoint-down(sm) {
+    @include typography-mobile('i2', $weight, $family);
+  }
+}

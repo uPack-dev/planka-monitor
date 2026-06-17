@@ -1,0 +1,8 @@
+@import '../../utils/typography';
+@import 'mixins';
+
+@each $family-key, $family-name in $thickness-family {
+  @each $suffix, $value in $thickness {
+    @include typography-class($typography, $suffix, $family-key);
+  }
+}

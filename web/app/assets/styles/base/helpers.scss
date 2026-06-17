@@ -1,0 +1,35 @@
+.hidden-desktop {
+  @include media-breakpoint-desktop {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include media-breakpoint-tablet {
+    display: none !important;
+  }
+}
+
+.hidden-mobile-desktop {
+  @include media-breakpoint-mobile {
+    display: none !important;
+  }
+  @include media-breakpoint-desktop-only {
+    display: none !important;
+
+  }
+}
+
+.hidden-mobile {
+  @include media-breakpoint-mobile {
+    display: none !important;
+  }
+}
+
+.semi-transparent {
+  opacity: 0.5;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}

@@ -1,0 +1,39 @@
+.section-wrapper {
+  padding-top: var(--pt);
+  padding-bottom: var(--pb);
+  background-color: var(--bg);
+
+  @include media-breakpoint-down(md) {
+    padding-top: var(--pt-mobile);
+    padding-bottom: var(--pb-mobile);
+  }
+}
+
+.page {
+  padding-top: #{$header-height}px;
+
+  @include media-breakpoint-down(md) {
+    padding-top: #{$header-height-adaptive}px;
+  }
+
+  &--overlay {
+    padding-top: 0;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 0;
+    }
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 180ms $ease-out,
+    filter 180ms $ease-out;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(3px);
+}

@@ -1,0 +1,127 @@
+/* stylelint-disable */
+
+// colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+$text-color-primary: #104070;
+$text-color-secondary: #0B2C4D;
+$text-color-disable: #999999;
+$text-color-invert: #ffffff;
+$text-color-muted-invert: #e5e5e5;
+
+$background-color-primary: #F3F4FD;
+$background-color-secondary: #0B2C4D;
+$background-color-tertiary: #104070;
+$background-color-invert: #ffffff;
+$background-color-dark: #1a1a1a;
+$background-color-header-accent: #215ca0;
+$background-color-overlay: rgba(0, 0, 0, 0.2);
+$background-color-overlay-2: rgba(#222, 0.6);
+$background-color-overlay-strong: rgba($color-black, 0.6);
+
+$shadow-color-primary: #D9D9D9;
+
+$actions-color-primary: #ffffff;
+$actions-color-red: #E31F42;
+$actions-color-blue: #164476;
+
+$accent-color-0: #fe5639;
+
+// Annonce mini-app palette
+$annonce-color-navy: #184566;
+$annonce-color-navy-dark: #0b304b;
+$annonce-color-blue: #275f88;
+$annonce-color-blue-soft: #3d6d8d;
+$annonce-color-cream: #fbf8f2;
+$annonce-color-yellow: #ffc261;
+$annonce-color-yellow-action: #f2b33f;
+$annonce-color-text: #f4fafd;
+$annonce-color-muted: #d8e7ef;
+$annonce-color-muted-strong: #cfe0e8;
+$annonce-color-ink: #182a33;
+$annonce-color-ink-muted: #52636d;
+$annonce-color-stroke: #d7e4ed;
+$annonce-color-error: #ff8a8a;
+$annonce-radius-screen: 30;
+$annonce-radius-card: 16;
+$annonce-font-brand: Days One, sans-serif;
+
+$icon-color-accent: #933637;
+$icon-color-addition: #606269;
+$icon-color-primary: #302e2d;
+$icon-color-secondary: #2b2b2b;
+$icon-color-invert: #ffffff;
+$icon-color-disable: rgb(117, 116, 116);
+$icon-color-whatsapp: #249f62;
+$icon-color-star: #FDC30F;
+$icons-color-invert-2: rgba(#fff, 0.3);
+$icon-color-brand: #933637;
+
+$stroke-color-primary: #e7e6e3;
+$stroke-color-addition: rgba(255, 255, 255, 0.2);
+$stroke-color-secondary: rgba(34, 34, 34, 0.2);
+$stroke-color-secondary-2: rgba(#222, 0.2);
+$stroke-color-invert: #fff;
+$stroke-color-whatsapp: #249f62;
+
+$strokes-radius: 999999;
+
+$gradient-card-featured:
+  linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%),
+  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+$gradient-header-submenu: linear-gradient(180deg, $background-color-secondary 0.04%, $background-color-header-accent 99.96%);
+// paths
+$fonts-path: '/fonts';
+$images-path: '/images';
+
+// timing
+$time-fast: 150ms;
+$time-normal: 250ms;
+$time-slow: 350ms;
+
+// card hover animation tokens
+$card-hover-scale: 1.03;
+$card-hover-duration: 300ms;
+$card-hover-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+// font
+$font-size-default: 16;
+$font-family-default-name: 'Alegreya Sans';
+$font-family-default: $font-family-default-name, sans-serif;
+
+// sizes
+$header-height: 90;
+$header-height-adaptive: 72;
+// other
+// $gap-desktop: 40;
+// $gap-mobile: 20;
+
+// Easing presets
+// --------------------------
+$linear: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+$ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+$ease-in: cubic-bezier(0.42, 0, 1, 1);
+$ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$ease-out: cubic-bezier(0, 0, 0.58, 1);
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+$ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+$ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+$ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+$ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);

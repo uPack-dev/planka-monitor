@@ -1,0 +1,31 @@
+import Typograf from 'typograf';
+
+/**
+ * Typograf integration
+ * @description Fix word wraps and other common typos
+ */
+export default defineNuxtPlugin({
+  parallel: true,
+  setup() {
+    // nuxtApp
+    const Tp = new Typograf({ locale: ['ru', 'en-US'] });
+
+    // Disable rules that add &nbsp;
+    Tp.disableRule('common/nbsp/beforeShortLastWord');
+    Tp.disableRule('common/nbsp/afterShortWord');
+    Tp.disableRule('ru/nbsp/beforeShortLastWord');
+    Tp.disableRule('ru/nbsp/afterShortWord');
+
+    // nuxtApp.vueApp.directive('typograph', {
+    //   mounted: (el) => {
+    //     el.innerHTML = Tp.execute(el.innerHTML);
+    //   },
+    // });
+
+    return {
+      provide: {
+        tp: (text) => Tp.execute(text),
+      },
+    };
+  },
+});

@@ -1,0 +1,18 @@
+@mixin typography-class($typography, $suffix: false, $family-key: 'i') {
+  @each $label, $map in $typography {
+    $suffix-string: '';
+    $family-string: '-#{$family-key}';
+
+    @if $suffix {
+      $suffix-string: '-#{$suffix}';
+    }
+
+    .#{$label + $suffix-string + $family-string} {
+      @include typography($label, $suffix, $family-key);
+
+      @include media-breakpoint-down(md) {
+        @include typography-mobile($label, $suffix, $family-key);
+      }
+    }
+  }
+}

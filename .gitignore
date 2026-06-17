@@ -1,0 +1,39 @@
+.env
+.env.*
+!.env.example
+
+# Go
+/bin/
+/monitor
+*.exe
+*.test
+*.out
+
+# Web
+/web/node_modules/
+/web/.pnpm-store/
+/web/.output/
+/web/.data/
+/web/.nuxt/
+/web/.nitro/
+/web/.cache/
+/web/dist/
+/web/coverage/
+/web/playwright-report/
+/web/test-results/
+/web/blob-report/
+/web/allure-results/
+/web/allure-report/
+/web/audit-screenshots/
+/web/screenshots/
+/web/tmp/
+/web/temp/
+/web/*.tsbuildinfo
+
+# Logs and local files
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~

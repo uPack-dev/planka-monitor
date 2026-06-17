@@ -1,0 +1,54 @@
+html {
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  height: stretch;
+  overflow-x: hidden;
+  touch-action: pan-x pan-y;
+  background-color: $annonce-color-navy;
+}
+
+html.motion-disabled {
+  scroll-behavior: auto !important;
+}
+
+html.motion-disabled *,
+html.motion-disabled *::before,
+html.motion-disabled *::after {
+  scroll-behavior: auto !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: stretch;
+  overflow: hidden auto;
+  font-family: $font-family-default;
+  font-size: #{$font-size-default}px;
+  font-weight: 400;
+  line-height: normal;
+  color: $text-color-primary;
+  touch-action: pan-x pan-y;
+  scrollbar-width: none;
+  background-color: $annonce-color-navy;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+#__nuxt {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+#app {
+  flex-grow: 1;
+}
